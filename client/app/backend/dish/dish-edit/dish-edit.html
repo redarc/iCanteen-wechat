@@ -1,0 +1,65 @@
+<!-- Main content -->
+<section class="content">
+ <form name="form" novalidate>
+    <!-- SELECT2 EXAMPLE -->
+  <div class="box box-default">
+    <div class="box-header with-border">
+      <h3 class="box-title">{{box_title}}</h3>
+
+      <div class="box-tools pull-right">
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+      </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <div class="row">
+        <div class="col-md-6">
+
+            <div class="form-group">
+              <label>菜名(*必填,不可重复*)</label>
+              <input type="text" ng-model="editData.name" class="form-control" name="dish_name" ng-init="editData.name" required>
+              <div ng-messages="form.dish_name.$error">
+                  <p ng-message="required">菜品名不能为空.</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>价格(元)</label>
+              <input type="number" ng-model="editData.price" class="form-control" ng-init="editData.price">
+            </div>
+
+            <div ng-hide=false>
+              <imageuploader label-name="菜品图片" select-files="selectFiles" multi-upload=true></imageuploader>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+          <selectdishcategory select-value="selected_category" />
+
+          <div class="form-group">
+            <label>菜品介绍</label>
+            <textarea class="form-control" rows="5" placeholder="Enter ..." ng-model="editData.description" ng-init="editData.description"></textarea>
+          </div>
+        </div>
+
+    </div>
+
+    <!-- /.box-body -->
+    <div class="box-footer">
+      <div class="row">
+        <div class="col-md-5 col-md-offset-1 col-xs-5 col-xs-offset-1">
+          <button type="submit" class="btn btn-default btn-block pull-right margin" onclick="window.history.back()">取消</button>
+        </div>
+        <div class="col-md-5 col-xs-5">
+          <button type="submit" class="btn btn-primary btn-block pull-right margin" ng-click="handleSubmit()">提交</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.box -->
+
+ </form>
+</section>

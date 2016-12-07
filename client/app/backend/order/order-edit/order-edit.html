@@ -1,0 +1,97 @@
+<!-- Main content -->
+<section class="content">
+ <form name="form" novalidate>
+    <!-- SELECT2 EXAMPLE -->
+  <div class="box box-default">
+    <div class="box-header with-border">
+      <h3 class="box-title">{{box_title}}</h3>
+
+      <div class="box-tools pull-right">
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+      </div>
+    </div>
+
+    <!-- /.box-header -->
+    <div class="box-body">
+      <div class="row">
+        <div class="col-md-6">
+
+          <div class="form-group">
+            <label>员工姓名</label>
+            <input type="text" ng-model="employee.name" class="form-control" ng-init="employee.name">
+          </div>
+
+          <div class="form-group">
+            <label>手机</label>
+            <input type="number" ng-model="employee.mobile" class="form-control" ng-init="employee.mobile">
+          </div>
+
+          <div class="form-group">
+            <label>工号</label>
+            <input type="number" ng-model="employee.userid" class="form-control" ng-init="employee.userid">
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>微信号</label>
+            <input type="text" ng-model="employee.weixinid" class="form-control" ng-init="employee.weixinid">
+          </div>
+
+
+          <div class="form-group">
+            <label>选择订餐计划</label>
+            <select class="form-control" ng-change="changeServePlan(selected_serve_plan)" ng-model="selected_serve_plan"
+                 ng-options=" plan._id as ('星期 ' + plan.days_of_week) for plan in serve_plans" on->
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>今日套餐(多选)</label>
+            <br>
+            <div ng-repeat="meal in meal_menu">
+              <div class="input-group margin">
+                <span class="input-group-addon">{{meal.name}}</span>
+                <input type="number" class="form-control" placeholder="订购数量" ng-init="0" ng-model="meal.amount">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>今日菜品单品(多选)</label>
+            <br>
+            <div ng-repeat="dish in dish_menu">
+              <div class="input-group margin">
+                <span class="input-group-addon">{{dish.name}}</span>
+                <input type="number" class="form-control" placeholder="订购数量" ng-init="0" ng-model="dish.amount">
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+    <!-- /.box-body -->
+    <div class="box-footer">
+      <div class="row">
+        <div class="col-md-5 col-md-offset-1 col-xs-5 col-xs-offset-1">
+          <button type="submit" class="btn btn-default btn-block pull-right margin" onclick="window.history.back()">取消</button>
+        </div>
+        <div class="col-md-5 col-xs-5">
+          <button type="submit" class="btn btn-primary btn-block pull-right margin" ng-click="handleSubmit()">提交</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.box -->
+ </form>
+
+</section>

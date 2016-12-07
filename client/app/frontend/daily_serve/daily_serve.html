@@ -1,0 +1,96 @@
+<div class="top icanteen-top">
+  <div class="top_tit">今日菜单</div>
+</div>
+
+<div class="page icanteen-page">
+  <div class="hd">
+    <img class="cover_page" src="/assets/images/meal_default.jpg"></img>
+  </div>
+  <div class="bd">
+    <div class="weui_cells_title">请选择套餐</div>
+    <div class="weui_cells weui_cells_checkbox">
+      <label class="weui_cell weui_check_label" for="{{meal._id}}" ng-repeat="meal in serve_plan.meal_menu">
+        <div class="weui_cell_hd">
+          <input type="checkbox" class="weui_check" id="{{meal._id}}" name="{{meal.name}}" ng-init="meal.checked=false" ng-model="meal.checked">
+          <i class="weui_icon_checked"></i>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="meal_name">{{meal.name}}</p>
+          <ul class="meal_menu">
+            <li class="dish_li" ng-repeat="dish in meal.package">
+              <span class="dish_type">{{dish.category}}</span>
+              <span class="dish_name">{{dish.name}}</span>
+            </li>
+          </ul>
+        </div>
+      </label>
+    </div>
+
+    <div class="weui_cells_title">请选择单品</div>
+    <div class="weui_cells weui_cells_checkbox">
+      <label class="weui_cell weui_check_label" for="{{dish._id}}" ng-repeat="dish in serve_plan.dish_menu">
+        <div class="weui_cell_hd">
+          <input type="checkbox" class="weui_check" id="{{dish._id}}" name="{{dish.name}}" ng-init="dish.checked=false" ng-model="dish.checked">
+          <i class="weui_icon_checked"></i>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <ul class="meal_menu">
+            <li class="dish_li">
+              <span class="dish_type">{{dish.category}}</span>
+              <span class="dish_name">{{dish.name}}</span>
+            </li>
+          </ul>
+        </div>
+      </label>
+    </div>
+
+    <div class="weui_cells_tips">每人每天只能订一份套餐, 多谢您的使用！
+      <br>用户: {{employee.name}}  工号: {{employee.userid}}
+      <br>{{dayOfWeek}}
+    </div>
+    <div class="weui_btn_area">
+      <a class="weui_btn weui_btn_primary" ng-click="handleSubmit()">确定</a>
+    </div>
+
+  </div>
+</div>
+
+<!--
+<tabbar tab-index="0"></tabbar>
+-->
+
+<div id="toast" ng-show="isShowToast">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <i class="weui_icon_toast"></i>
+        <p class="weui_toast_content">{{toastMessage}}</p>
+    </div>
+</div>
+
+<div class="weui_dialog_confirm" id="orderDialog" ng-show="isShowConfirmDialog">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd"><strong class="weui_dialog_title">我要订餐</strong></div>
+        <div class="weui_dialog_bd">
+          一人一天只有一次订餐机会, 确认订餐吗？
+          <ul class="meal_menu">
+            <li class="dish_li" ng-repeat="meal in selected_meal_orders">
+              <span class="dish_type">套餐</span>
+              <span class="dish_name">{{meal.name}}</span>
+            </li>
+
+            <li class="dish_li" ng-repeat="dish in selected_dish_orders">
+              <span class="dish_type">{{dish.category}}</span>
+              <span class="dish_name">{{dish.name}}</span>
+            </li>
+
+          </ul>
+        </div>
+        <div class="weui_dialog_ft">
+            <a ng-click="handleCancel()" class="weui_btn_dialog default">取消</a>
+            <a ng-click="handleConfirm()" class="weui_btn_dialog primary">确定</a>
+        </div>
+    </div>
+</div>
+
+<weuialert alert-title="订餐失败" alert-message="alertMessage" show-alert="showAlert"></weuialert>

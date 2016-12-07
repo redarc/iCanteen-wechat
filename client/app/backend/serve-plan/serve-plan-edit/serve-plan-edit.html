@@ -1,0 +1,77 @@
+<!-- Main content -->
+<section class="content">
+ <form name="form" novalidate>
+    <!-- SELECT2 EXAMPLE -->
+  <div class="box box-default">
+    <div class="box-header with-border">
+      <h3 class="box-title">{{box_title}}</h3>
+
+      <div class="box-tools pull-right">
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+      </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <div class="row">
+        <div class="col-md-6">
+
+            <selectdayofweek select-value="selected_day"/>
+
+            <div class="form-group">
+              <label>餐厅名/供餐线</label>
+              <input type="text" ng-model="editData.line_name" class="form-control" ng-init="editData.line_name">
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+          <div class="form-group">
+            <label>今日套餐(多选)</label>
+            <br>
+            <isteven-multi-select
+                input-model="meal_list"
+                output-model="selected_meal_list"
+                button-label="name"
+                item-label="name"
+                max-height="180px"
+                tick-property="selected"
+            >
+            </isteven-multi-select>
+          </div>
+
+          <div class="form-group">
+            <label>今日菜品单品(多选)</label>
+            <br>
+            <isteven-multi-select
+                input-model="dish_list"
+                output-model="selected_dish_list"
+                button-label="name"
+                item-label="category name"
+                max-height="180px"
+                tick-property="selected"
+            >
+            </isteven-multi-select>
+          </div>
+
+        </div>
+    </div>
+
+    <!-- /.box-body -->
+    <div class="box-footer">
+      <div class="row">
+        <div class="col-md-5 col-md-offset-1 col-xs-5 col-xs-offset-1">
+          <button type="submit" class="btn btn-default btn-block pull-right margin" onclick="window.history.back()">取消</button>
+        </div>
+        <div class="col-md-5 col-xs-5">
+          <button type="submit" class="btn btn-primary btn-block pull-right margin" ng-click="handleSubmit()">提交</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.box -->
+ </form>
+
+</section>

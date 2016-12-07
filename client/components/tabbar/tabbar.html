@@ -1,0 +1,11 @@
+<div class="footer_nav" ng-controller="TabbarController">
+  <ul>
+    <li ng-repeat="item in tab.menu" ng-class="{'current': $index == tabIndex}">
+      <a class="{{item.styleClass}}" ng-click="tab.selectTab($index)">
+        <img src="assets/images/blank.png" />
+        {{item.title}}
+      </a>
+    </li>
+    <div class="clear"></div>
+  </ul>
+</div>

@@ -1,0 +1,63 @@
+<!-- Main content -->
+<section class="content">
+ <form name="form" novalidate>
+    <!-- SELECT2 EXAMPLE -->
+  <div class="box box-default">
+    <div class="box-header with-border">
+      <h3 class="box-title">{{box_title}}</h3>
+
+      <div class="box-tools pull-right">
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+      </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <div class="row">
+        <div class="col-md-12">
+
+            <div class="form-group">
+              <label>用户名(*必填,不可重复*)</label>
+              <input type="number" ng-model="editData.name" class="form-control" ng-init="editData.name">
+            </div>
+
+            <div class="form-group">
+              <label>邮箱</label>
+              <input type="number" ng-model="editData.email" class="form-control" ng-init="editData.email">
+            </div>
+
+            <div class="form-group">
+              <label>电话(*不可重复*)</label>
+              <input type="number" ng-model="editData.phone" class="form-control" ng-init="editData.phone">
+            </div>
+
+            <div class="form-group">
+              <label>密码</label>
+              <input type="password" ng-model="editData.password" class="form-control" ng-init="editData.password">
+            </div>
+
+            <div class="form-group">
+              <label>管理员</label>
+              <input type="checkbox" ng-model="editData.isAdmin" class="form-control" ng-init="editData.isAdmin">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- /.box-body -->
+    <div class="box-footer">
+      <div class="row">
+        <div class="col-md-5 col-md-offset-1 col-xs-5 col-xs-offset-1">
+          <button type="submit" class="btn btn-default btn-block pull-right margin" onclick="window.history.back()">取消</button>
+        </div>
+        <div class="col-md-5 col-xs-5">
+          <button type="submit" class="btn btn-primary btn-block pull-right margin" ng-click="handleSubmit()">提交</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.box -->
+
+ </form>
+</section>

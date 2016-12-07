@@ -1,0 +1,39 @@
+
+//override AdminLTE.css
+
+#root-uiview {
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#dashboard-mainview {
+  min-height: 860px;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-wrapper, .right-side {
+  min-height: inherit;
+}
+
+.navbar-userpane {
+  color: #fff;
+  width: 200px;
+  padding: 10px 15px;
+  display: block;
+}
+
+.navbar-userpane span.navbar-username {
+  position: relative;
+  width: auto;
+  overflow: hidden;
+}
+
+.navbar-userpane button.navbar-logout {
+  width: 75px;
+  display: inline;
+  margin: 0;
+  background-color: transparent;
+  color: #fff;
+}

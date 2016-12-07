@@ -1,0 +1,200 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <base href="/">
+    <title>爱餐厅</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/weui/dist/style/weui.css" />
+      <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.css" />
+      <link rel="stylesheet" href="bower_components/datatables/media/css/jquery.dataTables.css" />
+      <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css" />
+      <link rel="stylesheet" href="bower_components/ui-select/dist/select.css" />
+      <link rel="stylesheet" href="bower_components/isteven-angular-multiselect/isteven-multi-select.css" />
+      <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css" />
+      <!-- endbower -->
+    <!-- endbuild -->
+    <link rel="stylesheet" href="assets/styles/buttons.dataTables.min.css" />
+    <link rel="stylesheet" href="assets/styles/AdminLTE.min.css" />
+    <link rel="stylesheet" href="assets/styles/jquery-jvectormap-1.2.2.css" />
+    <link rel="stylesheet" href="assets/styles/theme.css" />
+    <link rel="stylesheet" href="assets/styles/frontend.common.css" />
+    <!-- build:css({.tmp,client}) app/app.css -->
+      <link rel="stylesheet" href="app/app.css">
+      <!-- injector:css -->
+      <!-- endinjector -->
+    <!-- endbuild -->
+
+  </head>
+  <body ng-app="encWechatApp">
+    <!--[if lt IE 7]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div ui-view="" id="root-uiview"></div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <!--
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+    </script>
+    -->
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- build:js({client,node_modules}) app/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+      <script src="bower_components/angular-socket-io/socket.js"></script>
+      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/angular-validation-match/dist/angular-validation-match.min.js"></script>
+      <script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
+      <script src="bower_components/datatables-buttons/js/dataTables.buttons.js"></script>
+      <script src="bower_components/datatables-buttons/js/buttons.colVis.js"></script>
+      <script src="bower_components/datatables-buttons/js/buttons.flash.js"></script>
+      <script src="bower_components/datatables-buttons/js/buttons.html5.js"></script>
+      <script src="bower_components/datatables-buttons/js/buttons.print.js"></script>
+      <script src="bower_components/angular-datatables/dist/angular-datatables.js"></script>
+      <script src="bower_components/angular-datatables/dist/plugins/colreorder/angular-datatables.colreorder.js"></script>
+      <script src="bower_components/angular-datatables/dist/plugins/columnfilter/angular-datatables.columnfilter.js"></script>
+      <script src="bower_components/angular-datatables/dist/plugins/light-columnfilter/angular-datatables.light-columnfilter.js"></script>
+      <script src="bower_components/angular-datatables/dist/plugins/colvis/angular-datatables.colvis.js"></script>
+      <script src="bower_components/angular-datatables/dist/plugins/fixedcolumns/angular-datatables.fixedcolumns.js"></script>
+      <script src="bower_components/angular-datatables/dist/plugins/fixedheader/angular-datatables.fixedheader.js"></script>
+      <script src="bower_components/angular-datatables/dist/plugins/scroller/angular-datatables.scroller.js"></script>
+      <script src="bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
+      <script src="bower_components/angular-datatables/dist/plugins/buttons/angular-datatables.buttons.js"></script>
+      <script src="bower_components/angular-datatables/dist/plugins/select/angular-datatables.select.js"></script>
+      <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+      <script src="bower_components/ngSweetAlert/SweetAlert.js"></script>
+      <script src="bower_components/ui-select/dist/select.js"></script>
+      <script src="bower_components/isteven-angular-multiselect/isteven-multi-select.js"></script>
+      <script src="bower_components/moment/moment.js"></script>
+      <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+      <script src="bower_components/jszip/dist/jszip.js"></script>
+      <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+      <script src="bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
+      <script src="bower_components/ngDraggable/ngDraggable.js"></script>
+      <!-- endbower -->
+
+      <!--
+      <script src="socket.io-client/socket.io.js"></script>
+      -->
+    <!-- endbuild -->
+      <script src="assets/scripts/AdminLTE-app.js"></script>
+      <script src="assets/scripts/qupload.js"></script>
+      <script src="assets/scripts/moment-zh-cn.js"></script>
+
+    <!-- build:js(.tmp) app/app.js -->
+      <script src="app/app.js"></script>
+
+      <!-- injector:js -->
+      <script src="app/backend/admin/admin.module.js"></script>
+      <script src="components/auth/auth.module.js"></script>
+      <script src="components/util/util.module.js"></script>
+      <script src="app/backend/order_detail/order_detail.js"></script>
+      <script src="app/backend/account/signup/signup.controller.js"></script>
+      <script src="app/backend/admin/admin.controller.js"></script>
+      <script src="app/app.constant.js"></script>
+      <script src="app/backend/admin/admin.router.js"></script>
+      <script src="app/backend/dashboard/dashboard.controller.js"></script>
+      <script src="app/backend/dashboard/dashboard.js"></script>
+      <script src="app/backend/dish/dish-create/dish-create.controller.js"></script>
+      <script src="app/backend/dish/dish-create/dish-create.directive.js"></script>
+      <script src="app/backend/dish/dish-create/dish-create.js"></script>
+      <script src="app/backend/dish/dish-edit/dish-edit.controller.js"></script>
+      <script src="app/backend/dish/dish-edit/dish-edit.js"></script>
+      <script src="app/backend/dish/dish-list/dish-list.controller.js"></script>
+      <script src="app/backend/dish/dish-list/dish-list.js"></script>
+      <script src="app/backend/dish/dish.controller.js"></script>
+      <script src="app/backend/dish/dish.js"></script>
+      <script src="app/backend/home/home.controller.js"></script>
+      <script src="app/backend/home/home.js"></script>
+      <script src="app/backend/main/main.controller.js"></script>
+      <script src="app/backend/main/main.js"></script>
+      <script src="app/backend/meal/meal-create/meal-create.controller.js"></script>
+      <script src="app/backend/meal/meal-create/meal-create.js"></script>
+      <script src="app/backend/meal/meal-edit/meal-edit.controller.js"></script>
+      <script src="app/backend/meal/meal-edit/meal-edit.js"></script>
+      <script src="app/backend/meal/meal-list/meal-list.controller.js"></script>
+      <script src="app/backend/meal/meal-list/meal-list.js"></script>
+      <script src="app/backend/meal/meal.controller.js"></script>
+      <script src="app/backend/meal/meal.js"></script>
+      <script src="app/backend/operation_record/operation_record.controller.js"></script>
+      <script src="app/backend/operation_record/operation_record.js"></script>
+      <script src="app/backend/order/order-create/order-create.controller.js"></script>
+      <script src="app/backend/order/order-edit/order-edit.controller.js"></script>
+      <script src="app/backend/order/order-list/order-list.controller.js"></script>
+      <script src="app/backend/order/order.controller.js"></script>
+      <script src="app/backend/order/order.js"></script>
+      <script src="app/backend/order_detail/order-detail-create/order-detail-create.controller.js"></script>
+      <script src="app/backend/order_detail/order-detail-edit/order-detail-edit.controller.js"></script>
+      <script src="app/backend/order_detail/order-detail-list/order-detail-list.controller.js"></script>
+      <script src="app/backend/account/account.js"></script>
+      <script src="app/backend/order_detail/order_detal.controller.js"></script>
+      <script src="app/backend/serve-plan/serve-plan-create/serve-plan-create.controller.js"></script>
+      <script src="app/backend/serve-plan/serve-plan-edit/serve-plan-edit.controller.js"></script>
+      <script src="app/backend/serve-plan/serve-plan-list/serve-plan-list.controller.js"></script>
+      <script src="app/backend/serve-plan/serve-plan.controller.js"></script>
+      <script src="app/backend/serve-plan/serve-plan.js"></script>
+      <script src="app/backend/user/user-create/user-create.controller.js"></script>
+      <script src="app/backend/user/user-edit/user-edit.controller.js"></script>
+      <script src="app/backend/user/user-list/user-list.controller.js"></script>
+      <script src="app/backend/user/user-list/user-list.js"></script>
+      <script src="app/backend/user/user.controller.js"></script>
+      <script src="app/backend/user/user.js"></script>
+      <script src="app/frontend/canteen/canteen.controller.js"></script>
+      <script src="app/frontend/canteen/canteen.js"></script>
+      <script src="app/frontend/customer/customer.controller.js"></script>
+      <script src="app/frontend/customer/customer.js"></script>
+      <script src="app/frontend/daily_serve/daily_serve.controller.js"></script>
+      <script src="app/frontend/daily_serve/daily_serve.js"></script>
+      <script src="app/backend/account/login/login.controller.js"></script>
+      <script src="components/auth/auth.service.js"></script>
+      <script src="components/auth/interceptor.service.js"></script>
+      <script src="components/auth/router.decorator.js"></script>
+      <script src="components/auth/user.service.js"></script>
+      <script src="components/common/common.service.js"></script>
+      <script src="components/dashboard-nav/dashboard-nav.controller.js"></script>
+      <script src="components/dashboard-nav/dashboard-nav.directive.js"></script>
+      <script src="components/dish-categories/dish-categories.service.js"></script>
+      <script src="components/footer/footer.directive.js"></script>
+      <script src="components/image-uploader/image-uploader.directive.js"></script>
+      <script src="components/modal/modal.service.js"></script>
+      <script src="components/mongoose-error/mongoose-error.directive.js"></script>
+      <script src="components/navbar/navbar.controller.js"></script>
+      <script src="components/navbar/navbar.directive.js"></script>
+      <script src="components/selectDaysOfWeek/selectDaysOfWeek.directive.js"></script>
+      <script src="components/selectDishCategory/selectDishCategory.directive.js"></script>
+      <script src="components/tabbar/tabbar.controller.js"></script>
+      <script src="components/tabbar/tabbar.directive.js"></script>
+      <script src="app/backend/account/settings/settings.controller.js"></script>
+      <script src="components/util/util.service.js"></script>
+      <script src="components/weuiAlert/weuiAlert.directive.js"></script>
+      <!-- endinjector -->
+    <!-- endbuild -->
+  </body>
+</html>

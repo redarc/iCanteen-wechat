@@ -1,0 +1,22 @@
+{
+	"success": "success",
+	"exceed-order-time-span":"夜餐预定时间为每日00:00-16:00，您已超过预定时间，谢谢!",
+	"exceed-abort-order-time-span":"取消夜餐预定时间为每日00:00-16:00，您已超过预定时间，谢谢!",
+	"Incorrect-parameters": "Incorrect-parameters",
+	"Operation-failure": "Operation-failure",
+	"Invalid-password": "Invalid-password",
+	"User-duplicate": "User-duplicate",
+	"User-not-exists": "User-not-exists",
+	"Permission-denied": "Permission-denied",
+	"Duplicate-records": "Duplicate-records",
+	"Server-internal-error": "Server-internal-error",
+	"Incorrect parameters": "Incorrect parameters",
+	"Operation failure": "Operation failure",
+	"Invalid password": "Invalid password",
+	"User duplicate": "User duplicate",
+	"User not exists": "User not exists",
+	"Invalid captcha": "Invalid captcha",
+	"Permission denied": "Permission denied",
+	"Duplicate records": "Duplicate records",
+	"Server internal error": "Server internal error"
+}

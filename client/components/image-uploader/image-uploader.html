@@ -1,0 +1,22 @@
+<div class="form-group">
+
+  <label>{{labelName}}</label>
+  <br>
+  <div class="attachment-block clearfix" ng-repeat="(k,v) in selectFiles">
+    <img class="attachment-img" src="{{v.path}}" alt="Attachment Image">
+
+    <div class="attachment-pushed">
+      <h5 class="attachment-heading">
+        <button ng-click="abort(k)" class="btn btn-default">取消</button>
+      </h5>
+      <div class="attachment-text">
+        {{v.file.name}} - {{v.progress.p}}%
+      </div>
+    </div>
+  </div>
+
+  <div ng-file-select="onFileSelect($files)" data-multiple="false" title="select file" onclick="this.value = null" class="btn btn-upload btn-primary">
+    选择上传图片
+  </div>
+
+</div>

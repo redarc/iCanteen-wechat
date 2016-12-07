@@ -1,0 +1,23 @@
+<div class="top icanteen-top">
+  <div class="top_tit">用餐状况</div>
+</div>
+
+<div class="page icanteen-page">
+  <div class="hd">
+    <img class="cover_page" src="/assets/images/canteen.jpg"></img>
+  </div>
+
+  <div ng-drop="true" ng-drop-success="dropComplete($index,$data)" ng-repeat="item in content">
+      <li ng-drag="true" ng-drag-data="item" >
+          姓名：{{item.name}}，年龄：{{item.age}}
+      </li>
+  </div>
+
+  <div class="bd spacing main_message">
+    <i class="weui_icon_msg weui_icon_info"></i>
+    <h1 class="message_notes">敬请期待！</h1>
+  </div>
+
+</div>
+
+<tabbar tab-index="2"></tabbar>

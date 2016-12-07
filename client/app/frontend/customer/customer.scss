@@ -1,0 +1,52 @@
+//customer.scss
+
+.page{
+  background-color: #fbf9fe
+}
+
+.weui_cell {
+  margin: 0;
+  //padding: 5px;
+}
+
+.weui_cell_hd {
+  padding: 0;
+}
+
+.order_meal_name {
+  text-align: center;
+  color: #3cc51f;
+  font-weight: 400;
+  margin: 0;
+}
+
+.order_meal_menu {
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.order_dish_li {
+  //width: 100%;
+}
+
+.order_dish_category {
+  //none
+}
+
+.order_dish_name {
+  //none
+}
+
+.order_amount {
+  font-weight: 300;
+  font-size: 15px;
+  color: #0A2A12;
+  padding-right: 20px;
+}
+
+#none-order-notes {
+  text-align: center;
+  height: 100%;
+  padding: 100px 15px 100px 15px;
+}

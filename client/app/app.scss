@@ -1,0 +1,95 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+@import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+
+$fa-font-path: "../bower_components/font-awesome/fonts";
+@import '../bower_components/font-awesome/scss/font-awesome';
+
+$ionicons-font-path: "../bower_components/Ionicons/fonts";
+@import '../bower_components/Ionicons/scss/ionicons';
+
+/**
+ * App-wide Styles
+ */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+/*
+.container {
+  overflow: hidden
+}
+*/
+
+.icanteen-page {
+  padding-top: 50px;
+  top: 0px;
+  right: 0;
+  padding-bottom: 65px;
+  left: 0
+}
+
+.icanteen-page {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch
+}
+
+.page_title {
+  text-align: center;
+  font-size: 34px;
+  color: #3cc51f;
+  font-weight: 400;
+  margin: 0 15%
+}
+
+.cover_page {
+  display: block;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#DataTables_Table_0_filter > label > input[type="search"] {
+  border: 1px solid black;
+}
+
+#DataTables_Table_0_length > label > select {
+  border: 1px solid black;
+}
+
+// Component styles are injected through grunt
+// injector
+@import 'backend/admin/admin.scss';
+@import 'backend/dashboard/dashboard.scss';
+@import 'backend/dish/dish-create/dish-create.scss';
+@import 'backend/dish/dish-edit/dish-edit.scss';
+@import 'backend/dish/dish-list/dish-list.scss';
+@import 'backend/dish/dish.scss';
+@import 'backend/home/home.scss';
+@import 'backend/main/main.scss';
+@import 'backend/meal/meal-create/meal-create.scss';
+@import 'backend/meal/meal-edit/meal-edit.scss';
+@import 'backend/meal/meal-list/meal-list.scss';
+@import 'backend/meal/meal.scss';
+@import 'backend/operation_record/operation_record.scss';
+@import 'backend/order/order-list/order-list.scss';
+@import 'backend/order/order.scss';
+@import 'backend/order_detail/order-detail-list/order-detail-list.scss';
+@import 'backend/order_detail/order_detail.scss';
+@import 'backend/serve-plan/serve-plan-list/serve-plan-list.scss';
+@import 'backend/serve-plan/serve-plan.scss';
+@import 'backend/user/user-list/user-list.scss';
+@import 'backend/user/user.scss';
+@import 'frontend/canteen/canteen.scss';
+@import 'frontend/customer/customer.scss';
+@import 'frontend/daily_serve/daily_serve.scss';
+@import '../components/footer/footer.scss';
+@import '../components/image-uploader/image-uploader.scss';
+@import '../components/modal/modal.scss';
+@import '../components/weuiAlert/weuiAlert.scss';
+// endinjector

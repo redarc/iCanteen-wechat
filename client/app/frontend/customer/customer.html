@@ -1,0 +1,75 @@
+<div class="top icanteen-top">
+  <div class="top_tit">我的订餐</div>
+</div>
+
+<div class="page icanteen-page">
+  <div class="hd">
+    <img class="cover_page" src="/assets/images/canteen.jpg"></img>
+  </div>
+
+  <div class="bd">
+
+    <div ng-hide="daily_order">
+      <h3 id="none-order-notes">{{noneOrderNotes}}</h3>
+    </div>
+
+    <div ng-show="daily_order">
+      <div class="weui_cells_title" ng-show="daily_order.meal_orders.length">已订套餐</div>
+      <div class="weui_cells">
+        <label class="weui_cell" for="{{meal_order._id}}" ng-repeat="meal_order in daily_order.meal_orders">
+
+          <div class="col-xs-4 weui_cell_hd">
+            <p class="order_meal_name">{{meal_order.meal.name}}</p>
+          </div>
+
+          <div class="weui_cell_bd weui_cell_primary col-xs-5">
+            <ul class="order_meal_menu">
+              <li class="order_dish_li" ng-repeat="dish in meal_order.meal.package">
+                <span class="order_dish_name">{{dish.name}}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="weui_cell_ft col-xs-3 order_amount">
+              {{meal_order.amount}}份
+          </div>
+        </label>
+      </div>
+
+      <div class="weui_cells_title" ng-show="daily_order.dish_orders.length">已订单品</div>
+      <div class="weui_cells weui_cells_checkbox">
+        <label class="weui_cell weui_check_label" for="{{dish_order._id}}" ng-repeat="dish_order in daily_order.dish_orders">
+          <div class="weui_cell_hd">
+
+          </div>
+          <div class="weui_cell_bd weui_cell_primary">
+            <ul class="order_meal_menu">
+              <li class="order_dish_li">
+                <span class="order_dish_category col-xs-6">{{dish_order.dish.category}}</span>
+                <span class="order_dish_name col-xs-6">{{dish_order.dish.name}}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="weui_cell_ft order_amount">
+              {{dish_order.amount}}份
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="weui_cells_tips">每天00:00 ~ 16:00 之间订餐有效，感谢您的使用!
+    <div ng-show="daily_order">
+      <br>{{orderedNotes}}
+    </div>
+    <br>用户: {{employee.name}}  工号: {{employee.userid}}
+    <br>{{dayOfWeek}}
+  </div>
+
+  <div class="weui_btn_area" ng-show="daily_order">
+    <a class="weui_btn weui_btn_primary" ng-click="abortOrder()">取消订餐</a>
+  </div>
+
+</div>
+<!--
+<tabbar tab-index="1"></tabbar>
+-->
